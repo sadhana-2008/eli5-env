@@ -3,11 +3,14 @@ name = "eli5-env"
 version = "0.1.0"
 description = "Explain it to me like I'm 5 - RL Environment"
 dependencies = [
-    "openenv-core",
+    "openenv-core>=0.2.0",
     "fastapi",
     "uvicorn",
     "requests"
 ]
+
+[project.scripts]
+eli5-server = "server.app:main"
 
 [build-system]
 requires = ["setuptools>=61.0"]
