@@ -2,9 +2,11 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY . .
+COPY server/requirements.txt .
 
-RUN pip install fastapi uvicorn huggingface_hub httpx tqdm filelock fsspec packaging pyyaml typer
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
 
 EXPOSE 7860
 

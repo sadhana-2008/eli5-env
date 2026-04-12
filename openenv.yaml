@@ -1,4 +1,34 @@
-name: eli5-env
+name: code-review-env
 version: "1.0.0"
-description: "An environment where AI must explain complex concepts to a 5 year old"
+description: "An OpenEnv RL environment where AI agents review bad code and identify issues across 3 difficulty levels"
 author: sadhana-srini
+tags:
+  - code-review
+  - software-engineering
+  - real-world
+  - llm-grader
+tasks:
+  - id: easy
+    difficulty: easy
+    description: "Identify basic code quality issues like bad variable names and missing list comprehensions"
+  - id: medium
+    difficulty: medium
+    description: "Identify performance issues like O(n^2) complexity and inefficient data structures"
+  - id: hard
+    difficulty: hard
+    description: "Identify security vulnerabilities like pickle deserialization attacks and path traversal"
+action_space:
+  review: "string — the code review written by the agent"
+  task_id: "string — one of: easy, medium, hard"
+observation_space:
+  task_id: "string"
+  difficulty: "string"
+  code: "string — the bad code to review"
+  description: "string"
+  feedback: "string — grader feedback"
+  score: "float — 0.0 to 1.0"
+  issues_caught: "int"
+  total_issues: "int"
+  attempts_remaining: "int"
+  done: "bool"
+  reward: "float"

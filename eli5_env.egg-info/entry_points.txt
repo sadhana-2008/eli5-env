@@ -1,3 +1,0 @@
-[console_scripts]
-eli5-server = server.app:main
-server = server.app:main
