@@ -10,6 +10,7 @@ dependencies = [
 ]
 
 [project.scripts]
+server = "server.app:main"
 eli5-server = "server.app:main"
 
 [build-system]
